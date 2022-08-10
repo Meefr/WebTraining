@@ -1,0 +1,26 @@
+/* div
+{
+background-color: rgb(199, 199, 199);
+background-size: 100;
+margin: 100px 300px;
+padding: 30px 30px 30px 30px;
+border: 1%;
+border-radius: 5px;
+border-color: black;
+} */
+#red {
+  margin-left: 34%;
+  font-size: 40;
+}
+#blue {
+  margin-left: 40px;
+  font-size: 40;
+}
+#green {
+  margin-left: 40px;
+  font-size: 40;
+}
+#yellow {
+  margin-left: 40px;
+  font-size: 40;
+}
