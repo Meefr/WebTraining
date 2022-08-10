@@ -1,57 +1,117 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>simple calculator</title>
-    <style media="screen">
 
-    </style>
-    <script type="text/javascript">
-        
-        document.getElementById("ans").defaultValue = 0;
-        function calculator(op) {
-            var x1 = +document.getElementById("num1").value 
-            var x2 = +document.getElementById("num2").value
-            var answer = 0;
-            switch (op) {
-                case "add": answer = x1 + x2;
-                    break;
-                case "sub": answer = x1 - x2;
-                    break;
-                case "mult": answer = x1 * x2
-                    break;
-                case "div": answer = x1 / x2
-                    break;
-                case "mod": answer = x1 % x2
-                    break;
-            }
-            document.getElementById("ans").innerHTML = answer;
-            document.getElementById("ans").value = answer;
-        
+<html>
+    <head>
+
+        <style>
+            div
+        {
+            background-color: rgb(199, 199, 199);
+            background-size: 100;
+            margin: 100px 300px;
+            padding: 30px 30px 30px 30px;
+            border: 1%;
+            border-radius: 5px;
+            border-color: black;
         }
-        
-        
+            input.ColorButtom
+            {
+                background-color: white;
+                border-radius: 5%;
+                border-color: black;
+                margin-top: 10% ;
+                font-size: 40;
+                padding: 5px 18px;
+            }
+            #red
+            {
+                color: red;
+                margin-left:34%;
+            }
+            #blue
+            {
+                color: blue;
+                margin-left: 40px;
+            }
+            #green
+            {
+                color: green;
+                margin-left: 40px;
+            }
+            #yellow
+            {
+                color: yellow;
+                margin-left: 40px;
+            }
+            
+        </style>
+        <title style="color: red;">
+            Web Trainging
+        </title>
+    </head>
+
+    <body>
+       
+        <script>
+
+function calculate(op)
+        {
+            var ans = 0
+            var x1 = document.getElementById("num1").value * 1  
+            var x2 = document.getElementById("num2").value * 1
+            if(op == "Sub")
+            {
+                ans = x1 - x2
+            }
+            else if(op == "Mod")
+            {
+                ans = x1 % x2
+            }      
+            else if(op == "Mul")
+            {
+                ans = x1 * x2
+            }
+           else if(op == "Add")
+            {
+                ans = x1 + x2
+            }
+            else if (op == "Div")
+            {
+                ans = x1 / x2
+            }
+            document.getElementById("answer").innerHTML = ans
+        }
+
+            function ChangeBGColor(x)
+            {
+                document.bgColor = x
+            }
         </script>
-  </head>
-  <body >
-      <h1>web calculator</h1>
-    <form>
-     num1 : <input type="number" id="num1" value=0>
-     <br>
-     num2 : <input type="number" id="num2" value=0>
-     <br>
-     <br>
-     <button type="button" value="add" onclick="calculator('add')">add</button>
-     <button type="button" name="sub" onclick="calculator('sub')">sub</button>
-     <button type="button" name="mult" onclick="calculator('mult')">mult</button>
-     <button type="button" name="div" onclick="calculator('div')">div</button>
-     <button type="button" name="mod" onclick="calculator('mod')">mod</button>
-     <br>
-
-
-    </form>
-    
-    Result: <text id="ans"> 0 </text>
-
-  </body>
+        <input type="button" id="red" value="red" class="ColorButtom" onclick="ChangeBGColor('red')">
+        <input type="button" id="blue" value="blue" class="ColorButtom" onclick="ChangeBGColor('blue')">
+        <input type="button" id="green" value="green" class="ColorButtom" onclick="ChangeBGColor('green')">
+        <input type="button" id="yellow" value="yellow" class="ColorButtom" onclick="ChangeBGColor('yellow')">
+        <div style="margin-top: 50px;">
+            <h2 style="margin-left: 30px;">
+                view plainprint?
+            </h2>
+            <br>
+            <Form>
+                Numnber1: <input name ="num1" type="number"  id="num1" value=0>
+                <br>
+                Numnber2: <input name="num2" type="number"  id="num2" value=0>
+            </Form>
+            <br>
+            <input type="button" name="Add" id="Add" value="Add" onclick="calculate('Add') ; ChangeBGColor('white') ">
+            <input type="button" name="Sub" id="Sub" value="Sub" onclick="calculate('Sub'); ChangeBGColor('white')">
+            <input type="button" name="Mul" id="Mul" value="Mul" onclick="calculate('Mul') ; ChangeBGColor('white')" >
+            <input type="button" name="Div" id="Div" value="Div" onclick="calculate('Div') ; ChangeBGColor('white')">
+            <input type="button" name="Mod" id="Mod" value="Mod" onclick="calculate('Mod') ; ChangeBGColor('white')">
+            <br>
+            <br>
+            <form>
+                Answer Is : <text id="answer" value = 0> 0 </text>
+                <br>
+            </form>
+            </div>
+    </body>
 </html>
